@@ -1,0 +1,1487 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  /**
+   * Cores
+   */
+  --gold-web-golden: hsl(50, 95%, 56%);
+  --spanish-orange: hsl(24, 100%, 45%);
+  --persian-green: hsl(175, 80%, 33%);
+  --granite-gray: hsl(0, 0%, 40%);
+  --spring-green: hsl(143, 85%, 58%);
+  --ultramarine: hsl(260, 100%, 44%);
+  --blue-violet: hsl(272, 76%, 53%);
+  --smoky-black: hsl(0, 0%, 7%);
+  --dark-orange: hsl(33, 100%, 50%);
+  --winter-sky: hsl(332, 100%, 51%);
+  --cultured-1: hsl(0, 0%, 98%);
+  --cultured-2: hsl(0, 0%, 95%);
+  --cultured-3: hsl(0, 0%, 94%);
+  --light-gray: hsl(0, 0%, 80%);
+  --alice-blue: hsl(206, 89%, 93%);
+  --white_50: hsla(0, 0%, 100%, 0.5);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 0%, 99%);
+  --black: hsl(0, 0%, 0%);
+
+  /**
+   * Tipografia
+   */
+  --ff-spartan: "League Spartan", sans-serif;
+  --fs-1: 3rem;
+  --fs-2: 2.7rem;
+  --fs-3: 2.2rem;
+  --fs-4: 1.8rem;
+  --fs-5: 1.6rem;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  /**
+   * Espaçamento
+   */
+  --section-padding: 60px;
+
+  /**
+   * Sombra
+   */
+  --shadow-1: 0 2px 25px hsla(0, 0%, 0%, 0.1);
+  --shadow-2: 0 8px 14px hsla(0, 0%, 0%, 0.1);
+  --shadow-3: 0 14px 30px hsla(0, 0%, 0%, 0.05);
+
+  /**
+   * Raio da borda
+   */
+  --radius-6: 6px;
+  --radius-12: 12px;
+
+  /**
+   * Gradiente
+   */
+  --gradient-1: linear-gradient(
+    to right,
+    var(--winter-sky),
+    var(--dark-orange)
+  );
+  --gradient-2: linear-gradient(
+    to right,
+    var(--ultramarine),
+    var(--blue-violet)
+  );
+  --gradient-3: linear-gradient(
+    to right,
+    var(--winter-sky),
+    var(--dark-orange)
+  );
+  --gradient-4: linear-gradient(
+    to right,
+    var(--ultramarine),
+    var(--blue-violet)
+  );
+  --gradient-5: linear-gradient(
+    to right,
+    var(--persian-green),
+    var(--spring-green)
+  );
+  --gradient-6: linear-gradient(
+    to right,
+    var(--spanish-orange),
+    var(--gold-web-golden)
+  );
+
+  /**
+   * Transição
+   */
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+/* Reset geral */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remoção de marcadores de lista */
+li {
+  list-style: none;
+}
+
+/* Estilos básicos para elementos de link */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos para elementos comuns */
+a,
+img,
+svg,
+span,
+input,
+button,
+strong,
+ion-icon {
+  display: block;
+}
+
+/* Ajustes para imagens */
+img {
+  height: auto;
+}
+
+/* Ajustes para inputs e botões */
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+/* Ajustes para inputs de largura total */
+input {
+  width: 100%;
+}
+
+/* Cursor apontando para botões */
+button {
+  cursor: pointer;
+}
+
+/* Desativação de eventos do ponteiro para ion-icon */
+ion-icon {
+  pointer-events: none;
+}
+
+/* Ajustes gerais para o documento */
+html {
+  font-family: var(--ff-spartan);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Estilos gerais para o corpo */
+body {
+  background-color: var(--white-1);
+  color: var(--granite-gray);
+  font-size: 1.6rem;
+}
+
+/* Ajustes para o foco visível */
+:focus-visible {
+  outline-offset: 4px;
+}
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+/* Estilos reutilizados para contêineres */
+.container {
+  padding-inline: 15px;
+}
+
+/* Estilos para seções */
+.section {
+  padding-block: var(--section-padding);
+}
+
+/* Largura total */
+.w-100 {
+  width: 100%;
+}
+
+/* Estilos para títulos */
+.h1,
+.h2,
+.h3 {
+  color: var(--black);
+  font-weight: var(--fw-900);
+  line-height: 1.3;
+}
+
+/* Estilos específicos para h1 */
+.h1 {
+  font-size: var(--fs-1);
+}
+
+/* Estilos específicos para h2 */
+.h2 {
+  font-size: var(--fs-2);
+}
+
+/* Estilos específicos para h3 */
+.h3 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+}
+
+/* Estilos para texto de seção */
+.section-text {
+  line-height: 1.7;
+}
+
+/*-----------------------------------*\
+  #BOTÃO
+\*-----------------------------------*/
+
+/* Estilos para dispositivos móveis */
+.btn {
+  min-height: 50px;
+  color: var(--white-1);
+  padding-inline: 20px; /* Ajuste conforme necessário para dispositivos móveis */
+  border-radius: 50px;
+  font-size: 18px;
+}
+
+/* Botão secundário */
+.btn-secondary {
+  background-color: #000000;
+}
+
+/* Estilos para links dentro de botões */
+.btn-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition-1);
+}
+
+/* Efeito de espaçamento ao passar o mouse ou focar */
+.btn-link:is(:hover, :focus) {
+  letter-spacing: 0.3px;
+}
+
+  /* Gradiente para dispositivos desktop */
+  .btn {
+    background-image: linear-gradient(45deg, #ff6ec4, #b34dff);
+  }
+
+  /* Sombra para dispositivos desktop */
+  .btn:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+/* Estilos para dispositivos desktop (min-width: 768px) */
+@media screen and (min-width: 768px) {
+  .btn {
+    min-height: 50px;
+    color: var(--white-1);
+    padding-inline: 25px; /* Ajuste conforme necessário para dispositivos desktop */
+    border-radius: 100px;
+  }
+
+  /* Cor de fundo do botão secundário para desktop */
+  .btn-secondary {
+    background-color: #000000;
+  }
+
+  .btn-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition-1);
+  }
+    /* Gradiente para dispositivos desktop */
+    .btn {
+      background-image: linear-gradient(45deg, #ff6ec4, #b34dff);
+    }
+  
+    /* Sombra para dispositivos desktop */
+    .btn:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+/* Estilos para dispositivos móveis */
+.header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 4;
+  border-bottom: #6d206693 solid 0.1rem;
+  transition: background-color 0.5s ease-in-out;
+}
+
+/* Estilos quando o header está ativo (rolagem) */
+.header.active {
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #6d2067; /* Altere para a cor desejada ao rolar */
+  transition: background-color 0.5s ease-in-out;
+}
+
+/* Layout do contêiner do header */
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Estilos para o logotipo */
+.logo {
+  color: #ffffff; /* Altere para a cor desejada */
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  transition: color 0.5s ease-in-out;
+}
+
+/* Botão de toggle para dispositivos móveis */
+.nav-toggle-btn {
+  font-size: 40px;
+  color: #fff;
+}
+
+/* Estilos para o ícone de menu e ícone de fechar */
+.nav-toggle-btn.active .menu-icon,
+.nav-toggle-btn .close-icon {
+  display: none;
+}
+
+.nav-toggle-btn .menu-icon,
+.nav-toggle-btn.active .close-icon {
+  display: block;
+}
+
+/* Estilos para a barra de navegação */
+.navbar {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: calc(100% - 0px);
+  transform: translateX(-50%);
+  background-color: #85297e; /* Altere para a cor desejada */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.185);
+  overflow: hidden;
+  visibility: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease-out, visibility 0.25s ease-out;
+}
+
+/* Estilos quando a barra de navegação está ativa (rolagem) */
+.navbar.active {
+  visibility: visible;
+  max-height: 500px;
+  transition: max-height 0.35s ease-in, visibility 0.35s ease-in;
+}
+
+/* Estilos para itens da barra de navegação */
+.navbar-item:not(:last-child) {
+  border-bottom: 1px solid #662160;
+}
+
+/* Estilos para links na barra de navegação */
+.navbar-link {
+  color: #ffffff; /* Altere para a cor desejada */
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  padding: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Efeito de cor ao passar o mouse ou focar */
+.navbar-link:hover,
+.navbar-link:focus {
+  color: #00bcd4; /* Altere para a cor desejada ao passar o mouse ou focar */
+}
+
+/* Estilos para dispositivos desktop (min-width: 768px) */
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 50px;
+  }
+
+  .nav-toggle-btn {
+    font-size: 30px;
+  }
+
+  .navbar {
+    top: 100%;
+    left: 50%;
+    width: calc(100% - 30px);
+    transform: translateX(-50%);
+    background-color: #fff; /* Altere para a cor desejada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    visibility: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease-out, visibility 0.25s ease-out;
+  }
+
+  .navbar.active {
+    visibility: visible;
+    max-height: 300px;
+    transition: max-height 0.35s ease-in, visibility 0.35s ease-in;
+  }
+
+  .navbar-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .navbar-link {
+    color: rgb(255, 255, 255); /* Altere para a cor desejada */
+    font-size: 20px;
+    font-weight: 500;
+    padding: 16px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .navbar-link:hover,
+  .navbar-link:focus {
+    color: #ffd000; /* Altere para a cor desejada ao passar o mouse ou focar */
+  }
+}
+
+/* Estilos para o logotipo em formato de imagem */
+.logo img {
+  width: 120px; /* Defina o tamanho desejado */
+  height: auto; /* Mantém a proporção da imagem */
+  /* Adicione mais estilos conforme necessário */
+}
+
+/*#HERO-------------------------------------------------------------------------------------------------*\ 
+
+/**
+ * Estilos para dispositivos móveis
+ */
+.hero {
+  padding-block-start: calc(73px + var(--section-padding));
+  background-color: #a733a0;
+  padding-top: 50px;
+}
+
+.hero-banner {
+  aspect-ratio: 1 / 0.8;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+.hero-title {
+  margin-block: 30px -20px;
+  color: #ffffff;
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  line-height: 46px;
+}
+
+.section-text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
+  margin-left: 15px; /* Ajuste este valor conforme necessário para a margem esquerda */
+  margin-right: 15px; /* Ajuste este valor conforme necessário para a margem direita */
+}
+
+/**
+ * Estilos para dispositivos desktop (min-width: 768px)
+ */
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 40px; /* Exemplo de alteração para desktop */
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero-title {
+    font-size: 60px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    margin-block-start: 0;
+    margin-top: 20px;
+    margin-left: 10px;
+    line-height: 60px; /* Ajuste este valor conforme necessário para alterar o espaçamento entre as palavras */
+  }
+
+  .section-text {
+    margin-top: 50px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .hero-banner {
+    aspect-ratio: 1 / 0.8;
+    max-width: 525px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*#SERVIÇOS-------------------------------------------------------------------------------------------------*\ 
+
+/**
+ * Reset de margens e preenchimentos para evitar estilos padrão do navegador
+ */
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Estilos gerais da seção de serviço
+ */
+.section.service {
+  background-color: #f7f7f7;
+  padding: 80px 0; /* Preenchimento superior e inferior de 80 pixels */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Centralizar o conteúdo na tela */
+}
+
+.h2-section-title {
+  font-size: 45px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-text-2 {
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-left: 15px; /* Ajuste este valor conforme necessário para a margem esquerda */
+  margin-right: 15px; /* Ajuste este valor conforme necessário para a margem direita */
+}
+
+/**
+ * Estilos da lista de serviços
+ */
+.service-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-banner img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.card-title:hover {
+  color: #00bcd4;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.btn-link-2 {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-link-2:hover {
+  background-color: #00796b;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-banner img {
+  animation: floating 3s infinite;
+}
+
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+/**
+ * Estilos para a seção ABOUT
+ */
+.about {
+  text-align: center;
+}
+
+/* Estilos para o primeiro texto da seção ABOUT */
+.about .section-text:first-of-type {
+  margin-block: 5px 30px;
+}
+
+/* Estilos para a lista na seção ABOUT */
+.about-list {
+  display: grid;
+  gap: 25px;
+}
+
+/* Estilos para os cartões na seção ABOUT */
+.about-card {
+  color: var(--white-1);
+  padding: 20px;
+  border-radius: var(--radius-12);
+}
+
+.about-card-1 {
+  background-image: var(--gradient-3);
+}
+.about-card-2 {
+  background-image: var(--gradient-4);
+}
+.about-card-3 {
+  background-image: var(--gradient-5);
+}
+.about-card-4 {
+  background-image: var(--gradient-6);
+}
+
+/* Estilos para o banner dentro dos cartões na seção ABOUT */
+.about-card .card-banner {
+  min-width: 150px;
+  height: 150px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--white_50);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+  transition: var(--transition-2);
+}
+
+/* Estilos para o banner quando hover ou focus nos cartões da seção ABOUT */
+.about-card:is(:hover, :focus-within) .card-banner {
+  background-color: var(--white-1);
+}
+
+/* Estilos para o título nos cartões na seção ABOUT */
+.about-card .card-title {
+  color: var(--white-1);
+  margin-block: 20px 10px;
+}
+
+/* Estilos para o texto nos cartões na seção ABOUT */
+.about-card .card-text {
+  line-height: 1.8;
+  margin-block-end: 15px;
+}
+
+/* Estilos para os botões na seção ABOUT */
+.about .btn-link {
+  justify-content: center;
+}
+
+/* Estilos para o último texto da seção ABOUT */
+.about .section-text:last-of-type {
+  max-width: 50ch;
+  margin-inline: auto;
+  margin-block-start: 25px;
+}
+
+/* Estilos para os links dentro do último texto da seção ABOUT */
+.about .section-text:last-of-type .btn-link {
+  color: var(--blue-violet);
+  display: inline-flex;
+}
+
+/* Estilos para os links quando hover ou focus dentro do último texto da seção ABOUT */
+.about .section-text:last-of-type .btn-link:is(:hover, :focus) {
+  color: var(--winter-sky);
+  letter-spacing: 0;
+}
+
+/*-----------------------------------*\
+  #STATS
+\*-----------------------------------*/
+
+/**
+ * Estilos para a seção STATS
+ */
+.stats {
+  background-color: var(--cultured-2);
+}
+
+/* Estilos para o banner na seção STATS */
+.stats-banner {
+  max-width: max-content;
+  margin-inline: auto;
+  aspect-ratio: 1 / 0.78;
+  margin-block-end: 25px;
+}
+
+/* Estilos para a lista na seção STATS */
+.stats-list {
+  display: grid;
+  gap: 25px;
+}
+
+/* Estilos para os itens na seção STATS */
+.stats-item {
+  position: relative;
+  padding-block: 5px;
+  padding-inline-start: 15px;
+}
+
+/* Estilos para os elementos pseudo-antes dos itens na seção STATS */
+.stats-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.stats-item.purple::before {
+  background-color: var(--ultramarine);
+}
+.stats-item.red::before {
+  background-color: var(--winter-sky);
+}
+.stats-item.green::before {
+  background-color: var(--spring-green);
+}
+.stats-item.yellow::before {
+  background-color: var(--dark-orange);
+}
+
+/* Estilos para o título nos itens da seção STATS */
+.stats-item .item-title {
+  color: var(--black);
+  font-size: 3.5rem;
+  font-weight: var(--fw-900);
+  margin-block-end: 5px;
+}
+
+/* Estilos para a parte do título em span nos itens da seção STATS */
+.stats-item .item-title .span {
+  color: var(--granite-gray);
+  font-weight: var(--fw-400);
+  display: inline-block;
+  font-size: var(--fs-4);
+}
+
+/*-----------------------------------*\
+  #APP
+\*-----------------------------------*/
+
+/**
+ * Estilos para a seção APP
+ */
+.app-content {
+  margin-block-end: 25px;
+}
+
+.app .section-text {
+  margin-block: 5px 10px;
+}
+
+/* Estilos para o grupo de botões na seção APP */
+.app .btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilos para os botões na seção APP */
+.app .btn {
+  min-height: auto;
+  padding: 15px;
+}
+
+/* Estilos para as imagens dentro dos botões na seção APP */
+.app .btn img {
+  margin-block-end: 10px;
+}
+
+/* Estilos para o texto forte dentro dos botões na seção APP */
+.app .btn .strong {
+  margin-block-start: 5px;
+  font-weight: var(--fw-600);
+}
+
+/* Estilos para o banner na seção APP */
+.app-banner {
+  max-width: max-content;
+  margin-inline: auto;
+  aspect-ratio: 1 / 0.72;
+}
+
+/*-----------------------------------*\
+  #SUPPORT
+\*-----------------------------------*/
+
+/**
+ * Estilos para a seção SUPPORT
+ */
+.support {
+  background-image: var(--gradient-2);
+  color: var(--white-1);
+}
+
+/* Estilos para o título na seção SUPPORT */
+.support .section-title {
+  color: var(--white-1);
+}
+
+/* Estilos para o texto na seção SUPPORT */
+.support .section-text {
+  margin-block: 10px 15px;
+}
+
+/* Estilos para os botões na seção SUPPORT */
+.support .btn {
+  max-width: max-content;
+  display: grid;
+  place-items: center;
+}
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+/* Estilos para desktop */
+.footer-bottom {
+  padding-block: 25px;
+  background-color: #a733a0;
+  text-align: center;
+  line-height: 3; /* Ajuste da altura da linha para centralização */
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* Direitos autorais */
+.copyright {
+  margin-block-end: 15px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* Estilos do texto com a classe 'span' dentro dos direitos autorais */
+.copyright .span {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: var(--fw-500);
+  font-size: 15px;
+}
+
+/* Estilos do link nos direitos autorais */
+.copyright-link {
+  display: inline-block;
+  color: #ffffff;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Cor do link nos direitos autorais ao passar o mouse ou focar */
+@media only screen and (min-width: 768px) {
+  .copyright-link:is(:hover, :focus) {
+    color: #000000;
+  }
+}
+
+/* Lista inferior do rodapé */
+.footer-bottom-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px 20px;
+}
+
+/* Estilos dos links na lista inferior do rodapé */
+.footer-bottom-link {
+  transition: var(--transition-1);
+  color: #ffffff;
+}
+
+/* Cor do link na lista inferior do rodapé ao passar o mouse ou focar */
+.footer-bottom-link:is(:hover, :focus) {
+  color: #000000;
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 767px) {
+  .footer-bottom {
+    padding-block: 20px; /* Ajuste o espaçamento para dispositivos móveis conforme necessário */
+  }
+
+  /* Ajuste a margem conforme necessário */
+  .copyright {
+    margin-block-end: -18px;
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  /* Ajuste o peso da fonte conforme necessário */
+  .copyright .span {
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  /* Ajuste o peso da fonte conforme necessário */
+  .copyright-link {
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  /* Ajuste o espaçamento conforme necessário */
+  .footer-bottom-list {
+    color: #ffffff;
+    font-size: 18px;
+    gap: 30px;
+  }
+
+  /* Ajuste a altura da linha conforme necessário */
+  .footer-bottom-link {
+    line-height: 1.5;
+    color: #ffffff;
+  }
+}
+
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+/* Botão "Voltar ao Topo" */
+.back-top-btn {
+  background-color: var(--white-1);
+  color: var(--black);
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  border: 1px solid var(--light-gray);
+  font-size: 2.2rem;
+  padding: 12px;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-1);
+  z-index: 4;
+}
+
+/* Estilos do botão "Voltar ao Topo" quando ativo */
+.back-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-10px);
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * Responsivo para telas maiores que 480px
+ */
+@media (min-width: 480px) {
+  /* Estilos reutilizados para a largura de tela maior que 480px */
+  .header .btn {
+    display: block;
+    margin-inline-start: auto;
+    min-height: 40px;
+    padding-inline: 15px;
+  }
+}
+
+/**
+ * Responsivo para telas maiores que 575px
+ */
+@media (min-width: 575px) {
+  /* Estilos reutilizados para a largura de tela maior que 575px */
+  .container {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  /* Layouts de serviço, sobre, estatísticas, e contêiner do rodapé superior para telas maiores */
+  .service-list,
+  .about-list,
+  .stats-list,
+  .footer-top .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Altura mínima do cartão sobre para telas maiores */
+  .about-card {
+    min-height: 100%;
+  }
+
+  /* Estilos do botão no aplicativo para telas maiores */
+  .app .btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-inline: 25px;
+  }
+
+  /* Remoção da margem inferior para a imagem dentro do botão no aplicativo */
+  .app .btn img {
+    margin-block-end: 0;
+  }
+}
+
+/**
+ * Responsivo para telas maiores que 768px
+ */
+@media (min-width: 768px) {
+  /* Reset da fonte do corpo para telas maiores que 768px */
+  body {
+    font-size: 2rem;
+  }
+
+  /* Propriedades personalizadas para telas maiores que 768px */
+  :root {
+    --fs-1: 5rem;
+    --fs-2: 3.5rem;
+    --fs-3: 2.5rem;
+  }
+
+  /* Estilos reutilizados para a largura de tela maior que 768px */
+  .container {
+    max-width: 720px;
+  }
+
+  /* Estilos do botão no cabeçalho para telas maiores que 768px */
+  .header .btn {
+    font-size: 1.7rem;
+    font-weight: var(--fw-500);
+    min-height: 45px;
+    padding-inline: 25px;
+  }
+
+  /* Estilos do cartão de serviço para telas maiores que 768px */
+  .service-card {
+    --radius-6: 16px;
+  }
+
+  /* Estilos do conteúdo do cartão de serviço para telas maiores que 768px */
+  .service-card .card-content {
+    padding: 30px;
+  }
+
+  /* Ajustes nos estilos do item de recursos para telas maiores que 768px */
+  .features-item .item-title {
+    --fs-5: 2rem;
+  }
+
+  /* Ajuste de margem para o banner de recursos para telas maiores que 768px */
+  .features-banner.two {
+    margin-inline: auto 0;
+    margin-block-start: -180px;
+  }
+
+  /* Ajuste no espaçamento da lista de estatísticas para telas maiores que 768px */
+  .stats-list {
+    padding-inline: 60px;
+  }
+
+  /* Ajustes no espaçamento dos itens de estatísticas para telas maiores que 768px */
+  .stats-item {
+    padding-inline-start: 20px;
+  }
+
+  /* Tamanho da fonte para o título do item de estatísticas para telas maiores que 768px */
+  .stats-item .item-title {
+    font-size: 4rem;
+  }
+
+  /* Ajuste no espaçamento do botão no aplicativo para telas maiores que 768px */
+  .app .btn {
+    padding: 20px 30px;
+  }
+
+  /* Tamanho da fonte para o texto com a classe 'span' no conteúdo do aplicativo para telas maiores que 768px */
+  .app-content .span {
+    font-size: 1.5rem;
+  }
+
+  /* Tamanho da fonte para o texto com a classe 'strong' no conteúdo do aplicativo para telas maiores que 768px */
+  .app-content .strong {
+    font-size: 2rem;
+  }
+}
+
+/**
+ * Responsivo para telas maiores que 992px
+ */
+@media (min-width: 992px) {
+  /* Propriedades personalizadas para telas maiores que 992px */
+  :root {
+    --fs-2: 4rem;
+    --fs-3: 2.9rem;
+    --section-padding: 100px;
+  }
+
+  /* Estilos reutilizados para a largura de tela maior que 992px */
+  .container {
+    max-width: 960px;
+  }
+
+  /* Estilos reutilizados para os textos em 'service', 'about', e 'app' com uma largura de tela maior que 992px */
+  :is(.service, .about, .app) .section-text {
+    max-width: 55ch;
+    margin-inline: auto;
+  }
+
+  /**
+ * HEADER
+ */
+
+  /* Botão de alternância da navegação */
+  .nav-toggle-btn {
+    display: none;
+  }
+
+  /* Estilos da barra de navegação */
+  .navbar,
+  .navbar.active {
+    all: unset;
+  }
+
+  /* Lista da barra de navegação */
+  .navbar-list {
+    display: flex;
+    gap: 5px;
+  }
+
+  /* Estilos dos itens da barra de navegação */
+  .navbar-item:not(:last-child) {
+    border-block-end: none;
+  }
+
+  /* Estilos dos links da barra de navegação */
+  .navbar-link {
+    --fs-4: 2rem;
+  }
+
+  /* Estilos do botão no cabeçalho */
+  .header .btn {
+    margin-inline-start: 0;
+    min-height: 50px;
+    padding-inline: 40px;
+  }
+
+  /**
+ * HERO
+ */
+
+  /* Layout do contêiner do herói */
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    height: 600px;
+  }
+
+  /* Estilos do título do herói */
+  .hero-title {
+    margin-block-start: 0;
+  }
+
+  /**
+ * SERVICE
+ */
+
+  /* Lista de serviços */
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px; /* Ajuste o valor conforme necessário */
+  }
+
+  /**
+ * FEATURES
+ */
+
+  /* Layout do contêiner de recursos */
+  .features .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* Conteúdo dos recursos */
+  .features-content {
+    margin-block-end: 0;
+  }
+
+  /* Estilos dos itens de recursos */
+  .features-item {
+    padding: 20px;
+  }
+
+  .features-item:not(:last-child) {
+    margin-block-end: 20px;
+  }
+
+  .features-item .item-title {
+    --fs-5: 2.4rem;
+  }
+
+  /**
+ * ABOUT
+ */
+
+  /* Lista de sobre */
+  .about-list {
+    gap: 30px;
+  }
+
+  /* Cartão de sobre */
+  .about-card {
+    padding: 40px;
+  }
+
+  /**
+ * STATS
+ */
+
+  /* Layout do contêiner de estatísticas */
+  .stats .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  /* Banner de estatísticas */
+  .stats-banner {
+    margin-block-end: 0;
+  }
+
+  /* Lista de estatísticas */
+  .stats-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Estilos dos itens de estatísticas */
+  .stats-item:nth-child(even) {
+    margin-inline-start: auto;
+  }
+
+  .stats-item .item-title {
+    font-size: 4.5rem;
+  }
+
+  .stats-text {
+    font-size: 2.2rem;
+  }
+
+  /**
+ * APP
+ */
+
+  /* Estilos do aplicativo */
+  .app :is(.section-title, .section-text) {
+    text-align: center;
+  }
+
+  .app .btn-group {
+    justify-content: center;
+  }
+
+  /**
+ * SUPPORT
+ */
+
+  /* Layout do contêiner de suporte */
+  .support .container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    justify-items: self-end;
+    align-items: center;
+  }
+
+  /**
+ * FOOTER
+ */
+
+  /* Layout do contêiner do rodapé */
+  .footer .container {
+    grid-template-columns: 1fr 0.8fr 0.8fr 1fr;
+  }
+
+  /* Título da lista do rodapé */
+  .footer-list-title {
+    margin-block-end: 30px;
+  }
+
+  /* Estilos dos itens da lista do rodapé */
+  .footer-list > li:not(:last-child) {
+    margin-block-end: 25px;
+  }
+
+  /* Rodapé inferior */
+  .footer-bottom {
+    padding-block: 5px;
+  }
+
+  /* Layout do contêiner do rodapé inferior */
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Direitos autorais */
+  .copyright {
+    margin-block-end: 0;
+  }
+
+  /**
+ * Responsivo para telas maiores que 1200px
+ */
+
+  @media (min-width: 1200px) {
+    /**
+   * Propriedades personalizadas
+   */
+
+    :root {
+      --fs-1: 6rem;
+      --fs-2: 5rem;
+    }
+
+    /**
+   * Estilos reutilizados
+   */
+
+    .container {
+      max-width: 1140px;
+    }
+
+    /**
+   * Estilos específicos para telas maiores
+   */
+
+    /* Layout do contêiner de recursos para telas maiores */
+    .features .container {
+      grid-template-columns: 1fr max-content;
+      gap: 70px;
+    }
+
+    /* Layout do cartão sobre para telas maiores */
+    .about-card {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .about-card .card-title {
+      margin-block-start: 0;
+    }
+
+    /* Botão de link em 'about' para telas maiores */
+    .about .btn-link {
+      justify-content: flex-start;
+    }
+
+    /* Layout do contêiner do aplicativo para telas maiores */
+    .app .container {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      align-items: center;
+      gap: 25px;
+    }
+
+    /* Conteúdo do aplicativo para telas maiores */
+    .app-content {
+      margin-block-end: 0;
+    }
+
+    /* Títulos e alinhamento do texto no aplicativo para telas maiores */
+    .app :is(.section-title, .section-text) {
+      text-align: left;
+    }
+
+    .app .section-title {
+      --fs-2: 4rem;
+    }
+
+    /* Layout do grupo de botões no aplicativo para telas maiores */
+    .app .btn-group {
+      justify-content: flex-start;
+    }
+  }
+}
